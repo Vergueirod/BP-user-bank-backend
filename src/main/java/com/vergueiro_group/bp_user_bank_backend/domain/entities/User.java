@@ -1,24 +1,19 @@
-package com.vergueiro_group.bp_user_bank_backend.infrastructure.persistence.entity;
-import jakarta.persistence.*;
+package com.vergueiro_group.bp_user_bank_backend.domain.entities;
+import com.vergueiro_group.bp_user_bank_backend.domain.valueobject.Address;
+import com.vergueiro_group.bp_user_bank_backend.domain.valueobject.Telephone;
 
-import java.util.UUID;
-
-@Entity
-@Table(name="user")
-public class UserEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
-
+public class User {
     private String fullName;
     private String cpf;
     private String email;
     private String password;
 
-    // getters and setters
-    public UUID getId() { return id;}
-    public void setId(UUID id) { this.id = id;}
+    // Composition:
+    private Telephone telephone;
+    private Address address;
+
+    // Aggregation:
+    //private ClientAccount clientaccount;
 
     public String getFullName() { return fullName;}
     public void setFullName(String fullName) { this.fullName = fullName;}
@@ -31,5 +26,4 @@ public class UserEntity {
 
     public String getPassword() { return password;}
     public void setPassword(String password) { this.password = password;}
-
 }

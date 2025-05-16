@@ -1,7 +1,7 @@
-package com.vergueiro_group.bp_user_bank_backend.infrastructure.persistence.mapper;
+package com.vergueiro_group.bp_user_bank_backend.adapters.mappers;
 
-import com.vergueiro_group.bp_user_bank_backend.domain.model.User;
-import com.vergueiro_group.bp_user_bank_backend.infrastructure.persistence.entity.UserEntity;
+import com.vergueiro_group.bp_user_bank_backend.domain.entities.User;
+import com.vergueiro_group.bp_user_bank_backend.infrastructure.db.entity.UserEntity;
 
 public class UserEntityMapper {
     public static UserEntity toEntity(User user) {
