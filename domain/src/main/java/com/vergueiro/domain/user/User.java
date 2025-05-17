@@ -1,4 +1,4 @@
-package com.vergueiro.domain;
+package com.vergueiro.domain.user;
 
 import java.time.Instant;
 import java.util.UUID;

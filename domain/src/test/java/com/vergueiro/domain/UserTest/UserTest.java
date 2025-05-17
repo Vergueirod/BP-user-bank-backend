@@ -1,6 +1,6 @@
 package com.vergueiro.domain.UserTest;
 
-import com.vergueiro.domain.User;
+import com.vergueiro.domain.user.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,6 @@
 package com.vergueiro.application;
 
-import com.vergueiro.domain.User;
+import com.vergueiro.domain.user.User;
 
 public class UseCase {
 
