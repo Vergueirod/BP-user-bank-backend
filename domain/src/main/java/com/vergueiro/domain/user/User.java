@@ -1,10 +1,10 @@
 package com.vergueiro.domain.user;
 
-import java.time.Instant;
-import java.util.UUID;
+import com.vergueiro.domain.AggregateRoot;
 
-public class User {
-    private String id;
+import java.time.Instant;
+
+public class User  extends AggregateRoot<UserID> {
     private String fullName;
     private String cpf;
     private String email;
@@ -14,23 +14,23 @@ public class User {
     private Instant deletedAt;
 
     private User(
-            final String id,
-            final String fullName,
-            final String cpf,
-            final String email,
-            final String password,
-            final Instant createdAt,
-            final Instant updatedAt,
-            final Instant deletedAt
+            final UserID anId,
+            final String aFullName,
+            final String aCpf,
+            final String anEmail,
+            final String aPassword,
+            final Instant aCreatedAt,
+            final Instant anUpdatedAt,
+            final Instant aDeletedAt
     ) {
-        this.id = id;
-        this.fullName = fullName;
-        this.cpf = cpf;
-        this.email = email;
-        this.password = password;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.deletedAt = deletedAt;
+        super(anId);
+        this.fullName = aFullName;
+        this.cpf = aCpf;
+        this.email = anEmail;
+        this.password = aPassword;
+        this.createdAt = aCreatedAt;
+        this.updatedAt = anUpdatedAt;
+        this.deletedAt = aDeletedAt;
     }
 
     public static User newUser(
@@ -39,12 +39,12 @@ public class User {
             final String aEmail,
             final String aPassword
     ){
-        final var id = UUID.randomUUID().toString();
+        final var id = UserID.unique();
         final var now = Instant.now();
         return new User(id, aFullName, aCpf, aEmail, aPassword, now, now, null);
     }
 
-    public String getId() {
+    public UserID getId() {
         return id;
     }
 
