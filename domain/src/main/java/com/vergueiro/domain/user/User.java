@@ -3,6 +3,7 @@ package com.vergueiro.domain.user;
 import com.vergueiro.domain.AggregateRoot;
 
 import java.time.Instant;
+import java.util.UUID;
 
 public class User  extends AggregateRoot<UserID> {
     private String fullName;
@@ -39,8 +40,8 @@ public class User  extends AggregateRoot<UserID> {
             final String aEmail,
             final String aPassword
     ){
-        final var id = UserID.unique();
-        final var now = Instant.now();
+        final UserID id = UserID.unique();
+        final Instant now = Instant.now();
         return new User(id, aFullName, aCpf, aEmail, aPassword, now, now, null);
     }
 

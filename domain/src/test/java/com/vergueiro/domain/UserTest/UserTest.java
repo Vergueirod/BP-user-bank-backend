@@ -9,12 +9,12 @@ public class UserTest {
     @Test
     public void givenAValidParams_whenCallNewUser_thenInstantiateAUser(){
 
-        final var expectedFullName = "Bruno Costa";
-        final var expectedCpf = "75395185200";
-        final var expectedEmail = "bruno.costa@example.com";
-        final var expectedPassword = "Senha@1234";
+        final String expectedFullName = "Bruno Costa";
+        final String expectedCpf = "75395185200";
+        final String expectedEmail = "bruno.costa@example.com";
+        final String expectedPassword = "Senha@1234";
 
-        final var actualUser =
+        final User actualUser =
                 User.newUser(expectedFullName, expectedCpf, expectedEmail, expectedPassword);
 
         Assertions.assertNotNull(actualUser);
@@ -26,6 +26,5 @@ public class UserTest {
         Assertions.assertNotNull(actualUser.getCreatedAt());
         Assertions.assertNotNull(actualUser.getUpdatedAt());
         Assertions.assertNull(actualUser.getDeletedAt());
-
     }
 }
