@@ -1,5 +1,4 @@
 package com.vergueiro.domain;
-
 import java.util.Objects;
 
 public abstract class Entity<ID extends Identifier> {

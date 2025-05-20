@@ -1,9 +1,6 @@
 package com.vergueiro.domain.user;
-
 import com.vergueiro.domain.AggregateRoot;
-
 import java.time.Instant;
-import java.util.UUID;
 
 public class User  extends AggregateRoot<UserID> {
     private String fullName;

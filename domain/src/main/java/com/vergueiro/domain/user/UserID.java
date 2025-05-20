@@ -1,7 +1,5 @@
 package com.vergueiro.domain.user;
-
 import com.vergueiro.domain.Identifier;
-
 import java.util.Objects;
 import java.util.UUID;
 
