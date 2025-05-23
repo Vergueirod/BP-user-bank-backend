@@ -1,5 +1,7 @@
 package com.vergueiro.domain.user;
 import com.vergueiro.domain.AggregateRoot;
+import com.vergueiro.domain.validation.ValidationHandler;
+
 import java.time.Instant;
 
 public class User  extends AggregateRoot<UserID> {
@@ -40,6 +42,11 @@ public class User  extends AggregateRoot<UserID> {
         final UserID id = UserID.unique();
         final Instant now = Instant.now();
         return new User(id, aFullName, aCpf, aEmail, aPassword, now, now, null);
+    }
+
+    @Override
+    public void validate(final ValidationHandler handler){
+        new UserValidator(this, handler).validate();
     }
 
     public UserID getId() {
