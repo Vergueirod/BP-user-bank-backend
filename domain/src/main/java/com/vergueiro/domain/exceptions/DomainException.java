@@ -5,8 +5,9 @@ import com.vergueiro.domain.validation.Error;
 
 public class DomainException extends RuntimeException {
 
-    private final List<Error> Errors;
-    private DomainException(final List<Error> anErrors) {
+    protected final List<Error> errors;
+
+    protected DomainException(final List<Error> anErrors) {
         super("", null, true, false); // sem stack 3 completa -> ajuda na performance da aplicação
         this.errors = anErrors;
     }

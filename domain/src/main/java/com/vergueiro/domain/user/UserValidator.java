@@ -2,6 +2,7 @@ package com.vergueiro.domain.user;
 
 import com.vergueiro.domain.validation.ValidationHandler;
 import com.vergueiro.domain.validation.Validator;
+import com.vergueiro.domain.validation.Error;
 
 public class UserValidator extends Validator {
 
